@@ -31,13 +31,39 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CSC_IDENTITY_AUTO_DISCOVERY: false
 
-      - name: Upload artifacts to release
+      - name: List build output
+        shell: pwsh
+        run: Get-ChildItem dist -File | Select-Object Name, @{n='MB';e={[math]::Round($_.Length/1MB,1)}}
+
+      - name: Publish release assets
+        if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
+          name: ${{ github.ref_name }} · Markdown Editor
+          draft: false
+          generate_release_notes: false
+          body: |
+            ## 下载
+
+            - **安装版**：点击下方 `Markdown-Editor-Setup-*.exe` 下载，双击安装，自动关联 `.md` / `.markdown` 文件
+            - 系统要求：Windows 10 / 11（64 位）
+
+            ## 功能
+
+            - 左右分栏实时预览 Markdown
+            - LaTeX 数学公式（KaTeX）、Mermaid 图表、代码高亮
+            - 多标签编辑、查找替换、编辑区/预览区独立亮暗主题
+            - 一键导出 **PDF** / **DOCX**
+
+            ## 安装前请注意
+
+            1. **导出 DOCX 需要 Pandoc**：<https://pandoc.org/installing.html>（仅编辑、预览、导出 PDF 则无需安装）
+            2. 本程序未购买代码签名证书，Windows 可能提示「已保护你的电脑」→ 点击 **更多信息** → **仍要运行**
+            3. 公式与图表渲染暂时依赖 CDN，离线环境可能不显示（已在路线图中修复）
+
+            完整说明见 [README](https://github.com/jvn-mo/markdown-editor#readme)
           files: |
             dist/*.exe
             dist/*.blockmap
-          draft: false
-          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
