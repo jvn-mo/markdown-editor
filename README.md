@@ -26,6 +26,8 @@
 ![界面预览](docs/images/screenshot.png)
 -->
 
+> 📄 **想先看看效果？** 把 [examples/showcase.md](examples/showcase.md) 拖进编辑器，就能看到公式、表格、Mermaid 图表、代码高亮的完整渲染。它同时也是项目的**渲染回归自检样例**。
+
 ---
 
 ## ✨ 为什么做这个项目

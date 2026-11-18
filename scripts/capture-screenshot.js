@@ -5,7 +5,7 @@ const path = require('path');
 const fs = require('fs');
 
 const root = path.join(__dirname, '..');
-const demoPath = process.argv[2] || path.join(root, 'docs', 'images', 'demo.md');
+const demoPath = process.argv[2] || path.join(root, 'examples', 'showcase.md');
 const outPath = process.argv[3] || path.join(root, 'docs', 'images', 'screenshot.png');
 
 app.disableHardwareAcceleration();

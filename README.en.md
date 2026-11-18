@@ -25,6 +25,8 @@
 ![Screenshot](docs/images/screenshot.png)
 -->
 
+> 📄 **Want to see it first?** Drop [examples/showcase.md](examples/showcase.md) into the editor — it demonstrates math, tables, Mermaid diagrams and syntax highlighting, and doubles as the project's rendering regression sample.
+
 ---
 
 ## Why this exists
