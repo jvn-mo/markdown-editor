@@ -1,0 +1,39 @@
+# ==== 依赖 ====
+node_modules/
+
+# ==== 构建产物（安装包通过 GitHub Releases 分发，不入库）====
+dist/
+release/
+out/
+build/*.exe
+build/*.dmg
+build/*.AppImage
+build/*.zip
+
+# ==== 日志与本地开发记录（不公开发布）====
+*.log
+npm-debug.log*
+AI使用日志.md
+session-log.md
+project-docs.html
+graphify-out/
+.uploads/
+.trae/
+session-log/
+docs/*-log.md
+
+# ==== 编辑器 / 系统 ====
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==== 临时文件 ====
+*.tmp
+temp_export.md

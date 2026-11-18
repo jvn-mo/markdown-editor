@@ -1,0 +1,93 @@
+{
+  "name": "markdown-editor",
+  "version": "1.0.2",
+  "description": "A lightweight desktop Markdown editor with live preview, LaTeX, Mermaid and PDF/DOCX export",
+  "main": "main.js",
+  "license": "MIT",
+  "author": "jvn-mo",
+  "homepage": "https://github.com/jvn-mo/markdown-editor#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvn-mo/markdown-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jvn-mo/markdown-editor/issues"
+  },
+  "keywords": [
+    "markdown",
+    "editor",
+    "electron",
+    "markdown-editor",
+    "katex",
+    "mermaid",
+    "pdf",
+    "docx",
+    "pandoc",
+    "windows"
+  ],
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:portable": "electron-builder --win portable",
+    "test": "echo \"No tests yet\""
+  },
+  "build": {
+    "appId": "com.markdowneditor.app",
+    "productName": "Markdown Editor",
+    "copyright": "Copyright © 2025",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*",
+      "node_modules/**/*"
+    ],
+    "extraFiles": [],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "publisherName": "Markdown Editor"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Markdown Editor",
+      "include": "build/installer.nsh",
+      "uninstallDisplayName": "Markdown Editor",
+      "license": "",
+      "artifactName": "Markdown-Editor-Setup-${version}.exe"
+    },
+    "fileAssociations": [
+      {
+        "ext": "md",
+        "name": "Markdown Document",
+        "description": "Markdown Document",
+        "role": "Editor"
+      },
+      {
+        "ext": "markdown",
+        "name": "Markdown Document",
+        "description": "Markdown Document",
+        "role": "Editor"
+      }
+    ]
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "adm-zip": "^0.6.0"
+  }
+}
