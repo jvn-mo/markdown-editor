@@ -3,6 +3,8 @@
 > 一个为「从 AI 复制内容 → 排版 → 导出 Word/PDF」而生的桌面 Markdown 编辑器。
 > 公式、表格、代码块、Mermaid 图表所见即所得，导出不再乱码。
 
+[English](README.en.md) · 简体中文
+
 <p align="center">
   <img alt="platform" src="https://img.shields.io/badge/platform-Windows%2010%2F11-0078D6?logo=windows">
   <img alt="electron" src="https://img.shields.io/badge/Electron-30-47848F?logo=electron">
