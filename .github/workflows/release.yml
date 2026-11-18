@@ -26,9 +26,10 @@ jobs:
         run: npm ci
 
       - name: Build installer
+        # 不传 GH_TOKEN，避免 electron-builder 抢先创建一个没有说明文字的 Release；
+        # 发布统一交给下面的 softprops/action-gh-release 完成
         run: npm run build
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CSC_IDENTITY_AUTO_DISCOVERY: false
 
       - name: List build output
